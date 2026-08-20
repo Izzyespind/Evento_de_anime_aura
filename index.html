@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Animexx Resenhaxx</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+
+<body class="bg-purple-200 min-h-screen text-purple-950">
+
+    <header class="bg-purple-400 p-6 text-center">
+
+        <h1 class="text-purple-900 text-4xl font-bold">
+            Welcome to Animexx Resenhaxx!
+        </h1>
+
+        <p class="text-purple-800 mt-2">
+            Encontro voltado ao público geek e farmadores de aura.
+        </p>
+
+    </header>
+
+
+    <nav class="bg-purple-200 border-b border-purple-300">
+
+        <div class="max-w-7xl mx-auto px-6 py-6">
+
+            <div class="mb-6">
+
+                <div class="w-10 h-10 bg-purple-300 rounded-2xl flex items-center justify-center">
+
+                    <i class="fa-solid fa-user text-purple-800"></i>
+
+                </div>
+
+            </div>
+
+            <div class="mb-6">
+
+                <h2 class="text-pink-500 text-xl font-bold mb-2">
+                    Contém:
+                </h2>
+
+                <p class="text-black text-sm">
+                    Evento Cosplay, Lojinhas, apresentações, Jogos,
+                    campeonato de aura e muito mais!
+                </p>
+
+            </div>
+
+            <button
+                onclick="showAddModal()"
+                class="bg-pink-400 hover:bg-pink-500 text-black px-5 py-2.5 rounded-2xl text-sm font-semibold flex items-center gap-x-2">
+
+                <i class="fa-solid fa-plus"></i>
+
+                <span>
+                    Comprar ingresso
+                </span>
+
+            </button>
+
+        </div>
+
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 py-8">
+
+
+        <h3 class="text-3xl font-bold text-pink-500 mb-6">
+            Tipos de ingressos
+        </h3>
+
+        <div class="mb-4">
+
+            <input
+                type="text"
+                id="search"
+                placeholder="Buscar por ingresso..."
+                class="px-4 py-2.5 bg-purple-100 border border-purple-300 rounded-2xl text-sm w-72 outline-none"
+                onkeyup="loadProducts()">
+
+        </div>
+
+        <div class="mb-10">
+
+            <select
+                id="category-filter"
+                onchange="loadProducts()"
+                class="px-4 py-2.5 bg-purple-100 border border-purple-300 rounded-2xl text-sm">
+
+                <option value="">
+                    Todas categorias
+                </option>
+
+                <option value="Cosplay">
+                    Ingresso Cosplay
+                </option>
+
+                <option value="Apresentações">
+                    Ingresso Apresentações
+                </option>
+
+                <option value="Pacote inteiro">
+                    Todos os ingressos
+                </option>
+
+            </select>
+
+        </div>
+
+        <h2 class="text-2xl font-bold text-purple-800 mb-6">
+            Confira nossas atrações
+        </h2>
+
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+
+            <div class="bg-purple-100 p-4 rounded-3xl shadow">
+
+                <img
+                    src="https://i.pinimg.com/736x/33/10/44/3310445e9a738221555ed91332b97258.jpg"
+                    alt="Concurso Cosplay"
+                    class="w-full h-56 object-cover rounded-2xl">
+
+                <h3 class="text-xl font-bold text-pink-500 mt-4">
+                    Concurso Cosplay
+                </h3>
+
+                <p class="text-sm mt-2">
+                    Participe do nosso concurso cosplay e mostre toda
+                    a sua criatividade!
+                </p>
+
+            </div>
+
+            <div class="bg-purple-100 p-4 rounded-3xl shadow">
+
+                <img
+                    src="https://i.pinimg.com/736x/7c/7c/b9/7c7cb9165c298cb69245f6dfa69eefed.jpg"
+                    alt="Games"
+                    class="w-full h-56 object-cover rounded-2xl">
+
+                <h3 class="text-xl font-bold text-pink-500 mt-4">
+                    Games
+                </h3>
+
+                <p class="text-sm mt-2">
+                    Participe de jogos, desafios e campeonatos
+                    durante o evento!
+                </p>
+
+            </div>
+
+            <div class="bg-purple-100 p-4 rounded-3xl shadow">
+
+                <img
+                    src="https://i.pinimg.com/736x/2f/a5/64/2fa564330da2ab52860133507e80605c.jpg"
+                    alt="Apresentações"
+                    class="w-full h-56 object-cover rounded-2xl">
+
+                <h3 class="text-xl font-bold text-pink-500 mt-4">
+                    Apresentações
+                </h3>
+
+                <p class="text-sm mt-2">
+                    Confira apresentações e atrações especiais
+                    durante o evento!
+                </p>
+
+            </div>
+
+            <div class="bg-purple-100 p-4 rounded-3xl shadow">
+
+                <img
+                    src="https://i.pinimg.com/736x/5c/c1/de/5cc1dec0a90cbe3ce4bcb6e24e702131.jpg"
+                    alt="Lojinhas"
+                    class="w-full h-56 object-cover rounded-2xl">
+
+                <h3 class="text-xl font-bold text-pink-500 mt-4">
+                    Lojinhas
+                </h3>
+
+                <p class="text-sm mt-2">
+                    Encontre pelúcias, acessórios, colecionáveis
+                    e vários produtos para fãs de anime!
+                </p>
+
+            </div>
+
+            <div class="bg-purple-100 p-4 rounded-3xl shadow">
+
+                <img
+                    src="https://i.pinimg.com/1200x/dd/7b/41/dd7b41db0770931fb3103f9b064a8ac9.jpg"
+                    alt="Campeonato de Aura"
+                    class="w-full h-56 object-cover rounded-2xl">
+
+                <h3 class="text-xl font-bold text-pink-500 mt-4">
+                    Campeonato de Aura
+                </h3>
+
+                <p class="text-sm mt-2">
+                    Participe do campeonato e prove quem é o maior
+                    farmador de aura do evento!
+                </p>
+
+            </div>
+
+
+            <div class="bg-purple-100 p-4 rounded-3xl shadow">
+
+                <img
+                    src="https://i.pinimg.com/736x/3f/21/af/3f21af18033a375d2eb05f81d0f32d53.jpg"
+                    alt="E muito mais"
+                    class="w-full h-56 object-cover rounded-2xl">
+
+                <h3 class="text-xl font-bold text-pink-500 mt-4">
+                    E muito mais!
+                </h3>
+
+                <p class="text-sm mt-2">
+                    Explore o evento e descubra várias outras
+                    atrações e surpresas!
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div
+            id="products-container"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        </div>
+
+
+    </main>
+    <div
+        id="modal"
+        class="hidden fixed inset-0 bg-purple-950/40 flex items-center justify-center z-[100] p-4">
+
+
+        <div class="bg-purple-100 rounded-3xl w-full max-w-md p-6 shadow-xl">
+
+            <h3
+                id="modal-title"
+                class="text-xl text-pink-500 font-bold mb-4">
+
+                Nova compra
+
+            </h3>
+
+            <form
+                id="product-form"
+                onsubmit="saveProduct(event)">
+
+
+                <input
+                    type="hidden"
+                    id="product-id">
+
+
+                <div class="space-y-4">
+
+                    <div>
+
+                        <label
+                            for="nome"
+                            class="text-sm text-pink-500 font-medium">
+
+                            Tipo de Ingresso
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            required
+                            class="w-full mt-1 px-4 py-2.5 bg-purple-50 border border-purple-300 rounded-2xl">
+
+                    </div>
+                    <div>
+
+                        <label
+                            for="descricao"
+                            class="text-sm text-pink-500 font-medium">
+
+                            Descrição
+
+                        </label>
+
+                        <textarea
+                            id="descricao"
+                            rows="2"
+                            class="w-full mt-1 px-4 py-2.5 bg-purple-50 border border-purple-300 rounded-2xl"></textarea>
+
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+
+                        <div>
+
+                            <label
+                                for="preco"
+                                class="text-sm text-purple-700 font-medium">
+
+                                Preço (R$)
+
+                            </label>
+
+                            <input
+                                type="number"
+                                step="0.01"
+                                id="preco"
+                                required
+                                class="w-full mt-1 px-4 py-2.5 bg-purple-50 border border-purple-300 rounded-2xl">
+
+                        </div>
+
+                        <div>
+
+                            <label
+                                for="estoque"
+                                class="text-sm text-purple-700 font-medium">
+
+                                Estoque
+
+                            </label>
+
+                            <input
+                                type="number"
+                                id="estoque"
+                                class="w-full mt-1 px-4 py-2.5 bg-purple-50 border border-purple-300 rounded-2xl">
+
+                        </div>
+
+                    </div>
+
+                    <div>
+
+                        <label
+                            for="categoria"
+                            class="text-sm text-purple-700 font-medium">
+
+                            Categoria
+
+                        </label>
+
+                        <select
+                            id="categoria"
+                            class="w-full mt-1 px-4 py-2.5 bg-purple-50 border border-purple-300 rounded-2xl">
+
+                            <option value="Cosplay">
+                                Ingresso Cosplay
+                            </option>
+
+                            <option value="Apresentações">
+                                Ingresso Apresentações
+                            </option>
+
+                            <option value="Pacote inteiro">
+                                Todos os Ingressos
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div>
+
+                        <label
+                            for="imagem_url"
+                            class="text-sm text-purple-700 font-medium">
+
+                            URL da Imagem
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="imagem_url"
+                            placeholder="Cole o link da imagem"
+                            class="w-full mt-1 px-4 py-2.5 bg-purple-50 border border-purple-300 rounded-2xl">
+
+                    </div>
+
+
+                </div>
+
+                <div class="flex gap-x-3 mt-6">
+
+                    <button
+                        type="button"
+                        onclick="closeModal()"
+                        class="flex-1 py-3 rounded-2xl bg-purple-300 hover:bg-purple-400 text-purple-900">
+
+                        Cancelar
+
+                    </button>       
+
+                    <button
+                        type="submit"
+                        class="flex-1 py-3 rounded-2xl bg-pink-500 hover:bg-pink-600 text-white">
+
+                        <i class="fa-solid fa-cart-shopping mr-1"></i>
+
+                        Salvar
+
+                    </button>
+
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+
+
+        function showAddModal() {
+
+            const modal = document.getElementById("modal");
+
+            modal.classList.remove("hidden");
+
+        }
+
+
+        function closeModal() {
+
+            const modal = document.getElementById("modal");
+
+            modal.classList.add("hidden");
+
+        }
+
+
+
+        function loadProducts() {
+
+            const search =
+                document.getElementById("search").value;
+
+            const category =
+                document.getElementById("category-filter").value;
+
+            console.log("Pesquisa:", search);
+
+            console.log("Categoria:", category);
+
+        }
+
+
+        function saveProduct(event) {
+
+            event.preventDefault();
+
+
+            const nome =
+                document.getElementById("nome").value;
+
+            const descricao =
+                document.getElementById("descricao").value;
+
+            const preco =
+                document.getElementById("preco").value;
+
+            const estoque =
+                document.getElementById("estoque").value;
+
+            const categoria =
+                document.getElementById("categoria").value;
+
+            const imagem =
+                document.getElementById("imagem_url").value;
+
+
+            console.log("Nome:", nome);
+
+            console.log("Descrição:", descricao);
+
+            console.log("Preço:", preco);
+
+            console.log("Estoque:", estoque);
+
+            console.log("Categoria:", categoria);
+
+            console.log("Imagem:", imagem);
+
+
+            alert("Ingresso salvo: " + nome);
+
+
+            document.getElementById("product-form").reset();
+
+
+            closeModal();
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
